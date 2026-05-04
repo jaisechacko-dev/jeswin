@@ -1,0 +1,107 @@
+C:\Users\chacko\Desktop\invitation
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Housewarming Invitation</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #fdf6e3, #e8f5e9);
+  text-align: center;
+}
+
+.container {
+  padding: 20px;
+}
+
+.card {
+  max-width: 400px;
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+button {
+  margin: 10px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.yes {
+  background: #4CAF50;
+  color: white;
+}
+
+.no {
+  background: #f44336;
+  color: white;
+}
+
+input {
+  padding: 10px;
+  width: 80%;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+.hidden {
+  display: none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- YOUR IMAGE -->
+<img src="your-invite.png" class="card">
+
+<h2>Will you attend?</h2>
+
+<button class="yes" onclick="showYes()">I’ll attend</button>
+<button class="no" onclick="showNo()">I won’t be able to</button>
+
+<div id="yesSection" class="hidden">
+  <h3>How many people will attend?</h3>
+  <input type="number" placeholder="Enter count">
+  <br><br>
+  <button class="yes" onclick="thankYou()">Submit</button>
+</div>
+
+<div id="noSection" class="hidden">
+  <h3>Thanks! Have a great day ahead 😊</h3>
+</div>
+
+<div id="thankYouMsg" class="hidden">
+  <h3>Thank you! We look forward to seeing you 🎉</h3>
+</div>
+
+</div>
+
+<script>
+function showYes() {
+  document.getElementById("yesSection").style.display = "block";
+  document.getElementById("noSection").style.display = "none";
+}
+
+function showNo() {
+  document.getElementById("noSection").style.display = "block";
+  document.getElementById("yesSection").style.display = "none";
+}
+
+function thankYou() {
+  document.getElementById("thankYouMsg").style.display = "block";
+}
+</script>
+
+</body>
+</html>
